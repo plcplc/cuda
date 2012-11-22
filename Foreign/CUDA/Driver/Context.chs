@@ -1,3 +1,4 @@
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE BangPatterns             #-}
 {-# LANGUAGE CPP                      #-}
 {-# LANGUAGE EmptyDataDecls           #-}
@@ -51,6 +52,7 @@ import Control.Monad                    (liftM)
 -- A device context
 --
 newtype Context = Context { useContext :: {# type CUcontext #}}
+  deriving (Eq)
 
 
 -- |
